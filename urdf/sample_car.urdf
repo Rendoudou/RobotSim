@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--不要在urdf文件中出现中文注释-->
+<!--robot 根标签-->
+<robot name="new_car">
+
+    <!-- 设置一个原点(机器人中心点的投影) -->
+    <link name="base_footprint">
+        <visual>
+            <geometry>
+                <sphere radius="0.001" />
+            </geometry>
+        </visual>
+    </link>
+
+    <!--连杆标签 car_base-->
+    <link name="car_base">
+        <!--外观描述-->
+        <visual>
+            <!--形状-->
+            <geometry>
+                <!-- 长方体的长宽高 -->
+                <!-- <box size="0.5 0.3 0.1" /> -->
+                <!-- 圆柱，半径和长度 -->
+                <!-- <cylinder radius="0.5" length="0.1" /> -->
+                <!-- 球体，半径-->
+                <!-- <sphere radius="0.3" /> -->
+                <!--cylinder radius="0.5" length="0.5"-->
+                <box size="0.5 0.2 0.1" />
+            </geometry>
+            <!-- xyz坐标 rpy翻滚俯仰与偏航角度(3.14=180度 1.57=90度) -->
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <!-- 颜色: r=red g=green b=blue a=alpha -->
+            <material name="blue">
+                <color rgba="0 0 1.0 0.5" />
+            </material>
+        </visual>
+        <!--连杆碰撞属性-->
+        <collision>
+
+        </collision>
+    </link>
+
+    <!--连杆标签 lidar-->
+    <link name="camera">
+        <visual>
+            <geometry>
+                <box size="0.02 0.05 0.05" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="red">
+                <color rgba="1 0 0 0.5"/>
+            </material>
+        </visual>
+    </link>
+
+    <!--joint标签-->
+    <joint name="camera2base" type="continuous">
+        <!--连杆的两端连接处-->
+        <parent link="car_base"/>
+        <child link="camera"/>
+        <!-- 需要计算两个 link 的物理中心之间的偏移量 -->
+        <!--xyz=各轴线上的偏移量 rpy=各轴线上的偏移弧度-->
+        <origin xyz="0.2 0 0.075" rpy="0 0 0" />
+        <!--xyz用于设置围绕哪个关节轴运动-->
+        <axis xyz="0 0 1" />
+    </joint>
+</robot>
