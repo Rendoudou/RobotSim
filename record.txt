@@ -8,3 +8,10 @@
         1.创建urdf/xacro,用xacro创建小车模型，使用的是demo小车，带有激光雷达与camera。
         2.add config/mover_arbotix.yaml 模型控制移动配置文件。
         3.joint_state_publisher_gui 控制关节运动会出现抽搐的情况。（很迷惑）初步测试了一下，好像不是gui的问题。
+
+>>>>>20210414 main
+        1.xacro、urdf、gazebo融合仿真。
+        2.add worlds/new_world.world。
+        3.inertial.urdf.xacro中是计算惯性的宏方法。
+        4.修改了所有.xacro文件，以此配合gazebo仿真。
+        5.add launch test_gazebo.launch

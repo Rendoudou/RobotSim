@@ -1,12 +1,6 @@
 <?xml version="1.0"?>
 <launch>
 
-    <!--添加Arbotix-->
-    <node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen">
-        <rosparam file="$(find robot_sim)/config/mover_arbotix.yaml" command="load"/>
-        <param name="sim" value="true"/>
-    </node>
-
     <!--加载robot_description时使用command属性，属性值就是调用 xacro 功能包的 xacro 程序直接解析 xacro 文件-->
     <param name="robot_description" command="$(find xacro)/xacro -i $(find robot_sim)/urdf/xacro/robot_car.urdf.xacro"/>
 
@@ -19,7 +13,12 @@
     <!-- 可选:用于控制关节运动的节点 -->
     <!--    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui"/>-->
 
-    <!-- 启动 rviz -->
-    <node pkg="rviz" type="rviz" name="rviz_learn_urdf" args="-d $(find robot_sim)/rviz/test_xacro.rviz"
-          required="true"/>
+    <!-- 启动 gazebo -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find robot_sim)/worlds/new_world.world"/>
+    </include>
+
+    <!-- 在 gazebo 中显示机器人模型 -->
+    <node pkg="gazebo_ros" type="spawn_model" name="model" args="-urdf -model robot_car -param robot_description" required="true"/>
+
 </launch>
