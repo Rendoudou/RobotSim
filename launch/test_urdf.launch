@@ -9,6 +9,6 @@
     <!-- 可选:用于控制关节运动的节点 -->
     <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" />
     <!-- 启动 rviz -->
-    <node pkg="rviz" type="rviz" name="rviz_learn_urdf" args="-d $(find robot_sim)/rviz/test.rviz" required="true"/>
+    <node pkg="rviz" type="rviz" name="rviz_robot_sim" args="-d $(find robot_sim)/rviz/test_urdf.rviz" required="true"/>
 </launch>
 

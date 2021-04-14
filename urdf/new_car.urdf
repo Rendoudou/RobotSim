@@ -24,7 +24,7 @@
     <joint name="footprint2base" type="fixed">
         <parent link="footprint"/>
         <child link="car_base"/>
-        <origin xyz="0 0 0.001"/>
+        <origin xyz="0 0 0.05"/>
     </joint>
 
     <link name="camera">

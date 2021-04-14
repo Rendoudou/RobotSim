@@ -44,6 +44,7 @@
 
     </link>
 
+    <!--joint left wheel to base -->
     <joint name="left_wheel2base_link" type="continuous">
         <parent link="base_link" />
         <child link="left_wheel" />
@@ -51,7 +52,7 @@
         <axis xyz="0 1 0" />
     </joint>
 
-
+    <!--link right wheel-->
     <link name="right_wheel">
         <visual>
             <geometry>
@@ -65,6 +66,7 @@
 
     </link>
 
+    <!--joint right wheel to base -->
     <joint name="right_wheel2base_link" type="continuous">
         <parent link="base_link" />
         <child link="right_wheel" />
