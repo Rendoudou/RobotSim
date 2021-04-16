@@ -15,3 +15,10 @@
         3.inertial.urdf.xacro中是计算惯性的宏方法。
         4.修改了所有.xacro文件，以此配合gazebo仿真。
         5.add launch test_gazebo.launch
+
+>>>>>20210415 main
+        1.delete *.urdf, add robot_car.urdf
+        2.测试了坐标系抽搐的问题，新建了一个工程进行测试，还是会出错。
+        3.add lidar sensors
+        4.add velodyne lidar
+        5.add gazebo_rviz.rviz
