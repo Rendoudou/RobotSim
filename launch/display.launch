@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- 参数 -->
+    <arg name="use_rviz" default="true"/>
+    <arg name="use_rqt_image_view" default="false"/>
+
+    <!-- 启动 rviz -->
+    <group if="$(arg use_rviz)">
+        <node pkg="rviz" type="rviz" name="rviz_gazebo_rviz" required="true"
+              args="-d $(find robot_sim)/rviz/gazebo_rviz.rviz"/>
+    </group>
+
+    <!-- 启动 rqt_image_view -->
+    <group if="$(arg use_rqt_image_view)">
+        <node pkg="rqt_image_view" type="rqt_image_view" name="rqt_image_view" output="screen"/>
+    </group>
+
+</launch>

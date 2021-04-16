@@ -22,4 +22,5 @@
     <!-- 启动 rviz -->
     <node pkg="rviz" type="rviz" name="rviz_learn_urdf" args="-d $(find robot_sim)/rviz/test_xacro.rviz"
           required="true"/>
+
 </launch>

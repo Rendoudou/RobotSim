@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- 启动仿真模型 -->
+    <include file="$(find robot_sim)/launch/gazebo.launch"/>
+
+    <!-- 启动gmapping -->
+    <include file="$(find robot_sim)/launch/mapping.launch"/>
+
+    <!-- 启动显示 -->
+    <include file="$(find robot_sim)/launch/display.launch"/>
+
+</launch>

@@ -9,7 +9,7 @@
             <ray>
                 <scan>
                     <horizontal>
-                        <samples>3600</samples>
+                        <samples>360</samples>
                         <resolution>1</resolution>
                         <min_angle>-3.1415926</min_angle>
                         <max_angle>3.1415926</max_angle>
@@ -26,10 +26,14 @@
                     <stddev>0.01</stddev>
                 </noise>
             </ray>
-            <plugin name="velodyne_plugin" filename="libgazebo_ros_velodyne_laser.so">
+            <plugin name="gazebo_rplidar" filename="libgazebo_ros_laser.so">
                 <topicName>/velodyne_points</topicName>
                 <frameName>velodyne</frameName>
             </plugin>
+<!--            <plugin name="velodyne_plugin" filename="libgazebo_ros_velodyne_laser.so">-->
+<!--                <topicName>/velodyne_points</topicName>-->
+<!--                <frameName>velodyne</frameName>-->
+<!--            </plugin>-->
         </sensor>
     </gazebo>
 

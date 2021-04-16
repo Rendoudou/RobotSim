@@ -18,9 +18,6 @@
     <!-- 在 gazebo 中显示机器人模型 -->
     <node pkg="gazebo_ros" type="spawn_model" name="model" args="-urdf -model mycar -param robot_description"/>
 
-    <!-- 启动 rviz -->
-    <node pkg="rviz" type="rviz" name="rviz_gazebo_rviz" args="-d $(find robot_sim)/rviz/gazebo_rviz.rviz" required="true"/>
-
     <!--静态坐标转换-->
     <node pkg="tf2_ros" type="static_transform_publisher" name="lidar2base_link"
           args="0 0 0 0 0 0 laser velodyne" output="screen"/>
