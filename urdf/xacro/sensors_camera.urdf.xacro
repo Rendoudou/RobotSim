@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot name="sensors_camera" xmlns:xacro="http://ros.org/wiki/xacro">
-    <!-- camera -->
+    <!-- camera func -->
     <gazebo reference="camera">
         <sensor type="camera" name="camera">
             <update_rate>30.0</update_rate>
@@ -37,4 +37,5 @@
             </plugin>
         </sensor>
     </gazebo>
+
 </robot>

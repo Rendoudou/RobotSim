@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
 import roslib
 import rospy
 from geometry_msgs.msg import Twist
@@ -37,14 +37,14 @@ moveBindings = {
     ',': (-1, 0, 0, 0),
     '.': (-1, 0, 0, 1),
 
-    'U': (1, 0, 0, 1),
+    'O': (1, -1, 0, 0),
     'I': (1, 0, 0, 0),
-    'O': (1, 0, 0, -1),
-    'J': (0, 0, 0, 1),
-    'L': (0, 0, 0, -1),
-    'M': (-1, 0, 0, -1),
+    'J': (0, 1, 0, 0),
+    'L': (0, -1, 0, 0),
+    'U': (1, 1, 0, 0),
     '<': (-1, 0, 0, 0),
-    '>': (-1, 0, 0, 1),
+    '>': (-1, -1, 0, 0),
+    'M': (-1, 1, 0, 0),
 
     't': (0, 0, 1, 0),
     'b': (0, 0, -1, 0),
@@ -70,6 +70,9 @@ settings = termios.tcgetattr(sys.stdin)
 
 
 def getKey():
+    """
+    :return: get keyboard input
+    """
     tty.setraw(sys.stdin.fileno())
     select.select([sys.stdin], [], [], 0)
     key = sys.stdin.read(1)
@@ -78,6 +81,11 @@ def getKey():
 
 
 def vels(cur_speed, cur_turn):
+    """
+    :param cur_speed: current linear speed
+    :param cur_turn: current turn speed
+    :return: string, describe speed
+    """
     return "currently: cur_speed: %s cur_turn: %s " % (cur_speed, cur_turn)
     pass
 

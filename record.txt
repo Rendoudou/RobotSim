@@ -47,3 +47,8 @@
         2.加入相机仿真，加入了gmapping栅格地图构建。
         3.加入键盘控制，控制仿真机器人移动。
         4.注意mapping.launch中的<remap from="scan" to="$(arg points_topic)"/> <!--程序包里面需要scan 映射到/velodyne_points-->。
+
+>>>>>20210417 main
+        1.clion 中编译工程出现提示catkin_make_environment_cache..., 可以尝试删除cmake-build-debug文件。
+        2.修正对于teleop_twist_keyboard.py的错误修改。
+        3.新增README.md

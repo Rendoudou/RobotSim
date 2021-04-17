@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <robot name="my_car_move" xmlns:xacro="http://ros.org/wiki/xacro">
-
     <!-- power function -->
     <xacro:macro name="joint_trans" params="joint_name">
         <!-- Transmission is important to link the joints and the controller -->

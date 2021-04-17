@@ -1,4 +1,5 @@
 <robot name="sensors_kinect" xmlns:xacro="http://ros.org/wiki/xacro">
+    <!-- kinect camera func -->
     <gazebo reference="camera">
         <sensor type="depth" name="camera_kinect">
             <always_on>true</always_on>
