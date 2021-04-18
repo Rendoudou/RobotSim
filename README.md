@@ -18,5 +18,10 @@
 #### cd catkin_ws_robot_sim
 #### source devel/setup.bash
 #### roslaunch robot_sim main.launch
+### step 4
+#### bash
+#### cd catkin_ws_robot_sim
+#### source devel/setup.bash
+#### rosrun robot_sim 
 
 ## [See record.txt]

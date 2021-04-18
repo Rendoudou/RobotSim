@@ -16,6 +16,11 @@
         cd catkin_ws_robot_sim
         source devel/setup.bash
         roslaunch robot_sim main.launch
+        #step 4
+        bash
+        cd catkin_ws_robot_sim
+        source devel/setup.bash
+        rosrun robot_sim teleop_twist_keyboard.py
 
 >>>>>20210413 main
         1.urdf创建小车模型
@@ -52,3 +57,4 @@
         1.clion 中编译工程出现提示catkin_make_environment_cache..., 可以尝试删除cmake-build-debug文件。
         2.修正对于teleop_twist_keyboard.py的错误修改。
         3.新增README.md
+        4.如果提示找不到 teleop_twist_keyboard.py，在文件夹中出入sudo chmod 777 teleop_twist_keyboard.py(修改权限)。
