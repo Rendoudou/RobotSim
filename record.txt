@@ -1,5 +1,9 @@
->>>>>[brief usage]
-        #step 1
+>>>>>[Environment]
+        Ubuntu16.04
+        Ros-Kinetic
+
+>>>>>[Brief Usage]
+        #step 1 编译
         mkdir catkin_ws_robot_sim
         cd catkin_ws_robot_sim
         mkdir src
@@ -8,20 +12,36 @@
         cd ..
         cd ..
         catkin_make
-        #step 2
+
+        #step 2 启动ros
         bash
         roscore
-        #step 3
+
+        #step 3 建图
         bash
         cd catkin_ws_robot_sim
         source devel/setup.bash
-        roslaunch robot_sim main.launch
-        #step 4
+        roslaunch robot_sim robot_mapping.launch
+
+        #step 4 开启键盘控制
         bash
         cd catkin_ws_robot_sim
         source devel/setup.bash
         rosrun robot_sim teleop_twist_keyboard.py
 
+        #step 5 保存地图
+        bash
+        cd catkin_ws_robot_sim
+        source devel/setup.bash
+        roslaunch robot_sim save_map.launch
+
+        #step 6 定位
+        bash
+        cd catkin_ws_robot_sim
+        source devel/setup.bash
+        roslaunch robot_sim robot_navigation.launch
+
+>>>>>[Work Notes]
 >>>>>20210413 main
         1.urdf创建小车模型
         2.add rviz/test.rviz
@@ -58,3 +78,12 @@
         2.修正对于teleop_twist_keyboard.py的错误修改。
         3.新增README.md
         4.如果提示找不到 teleop_twist_keyboard.py，在文件夹中出入sudo chmod 777 teleop_twist_keyboard.py(修改权限)。
+
+>>>>>20210419 main
+        1.删除了不必要的一些文件。
+        2.加入amcl，地图保存，地图读取。
+            <!-- AMCL(adaptive Monte Carlo Localization) 是用于2D移动机器人的概率定位系统，-->
+            <!-- 它实现了自适应（或KLD采样）蒙特卡洛定位方法，可以根据已有地图使用粒子滤波器推算机器人位置。-->
+        3.修改部分文件名，合理。
+        4.*.rviz -> robot_sim_mapping.rviz 与 robot_sim_navigation.rviz
+        5.add /map，nav.pgm，nav.yaml

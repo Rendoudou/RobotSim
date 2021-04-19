@@ -2,7 +2,6 @@
 <launch>
     <!-- 参数 -->
     <arg name="points_topic" default="/velodyne_points"/> <!--激光点云话题-->
-
     <!-- 启动gmapping -->
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
         <remap from="scan" to="$(arg points_topic)"/> <!--程序包里面需要scan 映射到/velodyne_points-->

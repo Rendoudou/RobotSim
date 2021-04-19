@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <launch>
     <!-- 保存地图 -->
-    <arg name="filename" value="$(find robotsim)/map/nav" />
+    <arg name="filename" value="$(find robot_sim)/map/nav" />
+    <!-- 保存地图 -->
     <node name="map_save" pkg="map_server" type="map_saver" args="-f $(arg filename)" />
 
 </launch>

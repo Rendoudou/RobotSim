@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- args -->
+    <arg name="use_rviz" default="true"/>
+    <!-- rviz -->
+    <group if="$(arg use_rviz)">
+        <node pkg="rviz" type="rviz" name="rviz_robot_sim_navigation" required="true"
+              args="-d $(find robot_sim)/rviz/robot_sim_navigation.rviz"/>
+    </group>
+
+</launch>

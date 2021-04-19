@@ -1,8 +1,13 @@
 <?xml version="1.0"?>
 <launch>
+    <!-- 参数 -->
+    <arg name="points_topic" default="/velodyne_points"/> <!--激光点云话题-->
     <!-- 启动amcl -->
+    <!-- AMCL(adaptive Monte Carlo Localization) 是用于2D移动机器人的概率定位系统，-->
+    <!-- 它实现了自适应（或KLD采样）蒙特卡洛定位方法，可以根据已有地图使用粒子滤波器推算机器人位置。-->
     <node pkg="amcl" type="amcl" name="amcl" output="screen">
         <!-- Publish scans from best pose at a max of 10 Hz -->
+        <remap from="scan" to="$(arg points_topic)"/> <!--程序包里面需要scan 映射到/velodyne_points-->
         <param name="odom_model_type" value="diff"/><!-- 里程计模式为差分 -->
         <param name="odom_alpha5" value="0.1"/>
         <param name="transform_tolerance" value="0.2" />

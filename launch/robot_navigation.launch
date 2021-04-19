@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- 加载地图 -->
+    <include file="$(find robot_sim)/launch/load_map.launch"/>
+    <!-- 启动仿真模型 -->
+    <include file="$(find robot_sim)/launch/robot_model.launch"/>
+    <!-- amcl启动 -->
+    <include file="$(find robot_sim)/launch/amcl.launch"/>
+    <!-- display -->
+    <include file="$(find robot_sim)/launch/display_navigation.launch"/>
+
+</launch>

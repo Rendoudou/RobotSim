@@ -21,7 +21,7 @@
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="yellow">
-        <color rgba="0.5 0.3 0.0 0.5"/>
+        <color rgba="0.5 0.3 0.0  0.5"/>
       </material>
     </visual>
     <collision>
@@ -217,7 +217,10 @@
         <box size="0.01 0.025 0.025"/>
       </geometry>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <material name="black"/>
+      <material name="green">
+        <!-- easy to find front -->
+        <color rgba="0.0 1.0 0.0 1.0"/>
+      </material>
     </visual>
     <collision>
       <geometry>
@@ -236,7 +239,7 @@
     <origin xyz="0.08 0.0 0.0525"/>
   </joint>
   <gazebo reference="camera">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Red</material>
   </gazebo>
   <!-- Transmission is important to link the joints and the controller -->
   <transmission name="left_wheel2base_link_trans">

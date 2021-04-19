@@ -1,24 +1,19 @@
 <?xml version="1.0"?>
 <launch>
-
-    <!--加载robot_description时使用command属性，属性值就是调用 xacro 功能包的 xacro 程序直接解析 xacro 文件-->
+    <!-- 加载robot_description时使用command属性，属性值就是调用 xacro 功能包的 xacro 程序直接解析 xacro 文件 -->
     <param name="robot_description" command="$(find xacro)/xacro -i $(find robot_sim)/urdf/xacro/robot_car.urdf.xacro"/>
-
     <!-- 添加关节状态发布节点 -->
     <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"/>
-
     <!-- 添加机器人状态发布节点 -->
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
-
-    <!-- 启动 rviz -->
-    <node pkg="rviz" type="rviz" name="rviz_robot_sim" args="-d $(find robot_sim)/rviz/test_gazebo.rviz" required="true"/>
-
     <!-- 启动 gazebo -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="world_name" value="$(find robot_sim)/worlds/new_world.world"/>
     </include>
-
     <!-- 在 gazebo 中显示机器人模型 -->
-    <node pkg="gazebo_ros" type="spawn_model" name="model" args="-urdf -model robot_car -param robot_description"/>
+    <node pkg="gazebo_ros" type="spawn_model" name="model" args="-urdf -model mycar -param robot_description"/>
+    <!--静态坐标转换-->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="lidar2base_link"
+          args="0 0 0 0 0 0 laser velodyne" output="screen"/>
 
 </launch>

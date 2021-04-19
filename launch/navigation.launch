@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-    <!-- 加载地图 -->
-    <include file="$(find robot_sim)/launch/load_map.launch"/>
-
-
-
-</launch>

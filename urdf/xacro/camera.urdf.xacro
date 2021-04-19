@@ -15,7 +15,9 @@
                 <box size="${camera_length} ${camera_width} ${camera_height}" />
             </geometry>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-            <material name="black" />
+            <material name="green"> <!-- easy to find front -->
+                <color rgba="0.0 1.0 0.0 1.0" />
+            </material>
         </visual>
         <collision>
             <geometry>
@@ -33,7 +35,7 @@
     </joint>
 
     <gazebo reference="camera">
-        <material>Gazebo/Blue</material>
+        <material>Gazebo/Red</material>
     </gazebo>
 
 </robot>
