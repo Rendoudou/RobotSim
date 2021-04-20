@@ -30,8 +30,8 @@
             <alwaysOn>true</alwaysOn>
             <updateRate>100.0</updateRate>
             <legacyMode>true</legacyMode>
-            <leftJoint>left_wheel2base_link</leftJoint> <!-- left_wheel -->
-            <rightJoint>right_wheel2base_link</rightJoint> <!-- right_wheel -->
+            <leftJoint>right_wheel2base_link</leftJoint> <!-- left_wheel -->
+            <rightJoint>left_wheel2base_link</rightJoint> <!-- right_wheel -->
             <wheelSeparation>${base_link_radius * 2}</wheelSeparation> <!-- wheel Separation -->
             <wheelDiameter>${wheel_radius * 2}</wheelDiameter> <!-- wheel Diameter -->
             <broadcastTF>1</broadcastTF>
