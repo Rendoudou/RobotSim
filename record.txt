@@ -35,7 +35,7 @@
         source devel/setup.bash
         roslaunch robot_sim save_map.launch
 
-        #step 6 定位
+        #step 6 定位与导航
         bash
         cd catkin_ws_robot_sim
         source devel/setup.bash
@@ -88,9 +88,13 @@
         4.*.rviz -> robot_sim_mapping.rviz 与 robot_sim_navigation.rviz
         5.add /map，nav.pgm，nav.yaml
 
->>>>>20210420 main
+>>>>>20210420 v1.7 main
         1.增加了move_base导航功能， add move_base.launch。
         2.原来的左右轮貌似写反了，即原版的键盘控制是正确的。
         3.增加了一众导航配置文件。/config
         4.base_local_planner_params.yaml里的几个参数很影响小车运行，特别是左右差速度。
         5.可以参考eaibot的配置文件。
+
+>>>>>20210421 v1.7.1 main
+        1.修正左右轮相反的问题。
+        2.修正readme.md的错误。

@@ -116,8 +116,8 @@
         </gazebo>
     </xacro:macro>
 
-    <xacro:add_wheels name="left" flag="1" />
-    <xacro:add_wheels name="right" flag="-1" />
+    <xacro:add_wheels name="left" flag="-1" />
+    <xacro:add_wheels name="right" flag="1" />
 
     <xacro:add_support_wheel name="front" flag="1" />
     <xacro:add_support_wheel name="back" flag="-1" />
