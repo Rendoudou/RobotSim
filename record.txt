@@ -23,7 +23,7 @@
         source devel/setup.bash
         roslaunch robot_sim robot_mapping.launch
 
-        #step 4 开启键盘控制
+        #step 4 开启键盘控制（可选,robot_mapping.launch中已加入导航建图）
         bash
         cd catkin_ws_robot_sim
         source devel/setup.bash
@@ -98,3 +98,8 @@
 >>>>>20210421 v1.7.1 main
         1.修正左右轮相反的问题。
         2.修正readme.md的错误。
+
+>>>>>20210426 v.1.7.2 main
+        1.在建图部分加入move_base,可以选择进行导航建图，这是可选的。
+        2.change robot_mapping.launch README.md record.txt
+        3.修改部分仿真参数，小车的运行状态不理想。 base_local_planner_params.yaml

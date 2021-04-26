@@ -4,6 +4,8 @@
     <include file="$(find robot_sim)/launch/robot_model.launch"/>
     <!-- 启动gmapping -->
     <include file="$(find robot_sim)/launch/mapping.launch"/>
+    <!-- move_base 导航启动 -->
+    <include file="$(find robot_sim)/launch/move_base.launch"/>
     <!-- 启动显示 -->
     <include file="$(find robot_sim)/launch/display_mapping.launch"/>
 
