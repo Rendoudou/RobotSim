@@ -10,7 +10,7 @@
     <xacro:property name="base_link_radius" value="0.1" />
     <xacro:property name="base_link_length" value="0.08" />
     <xacro:property name="earth_space" value="0.015" />
-    <xacro:property name="base_link_m" value="0.5" />
+    <xacro:property name="base_link_m" value="3.0" />
 
     <link name="base_footprint">
         <visual>
@@ -51,7 +51,7 @@
 
     <xacro:property name="wheel_radius" value="0.0325" />
     <xacro:property name="wheel_length" value="0.015" />
-    <xacro:property name="wheel_m" value="0.05" />
+    <xacro:property name="wheel_m" value="1.00" /> <!-- too light -->
 
     <xacro:macro name="add_wheels" params="name flag">
         <link name="${name}_wheel">
@@ -84,7 +84,7 @@
     </xacro:macro>
 
     <xacro:property name="support_wheel_radius" value="0.0075" />
-    <xacro:property name="support_wheel_m" value="0.03" />
+    <xacro:property name="support_wheel_m" value="0.6" />
 
     <xacro:macro name="add_support_wheel" params="name flag" >
         <link name="${name}_support_wheel">

@@ -1,6 +1,5 @@
-# robot_sim
-
-## [Brief Usage]
+# RobotSim V1.7.3
+## 一、[Brief Usage]
 ### Step 1 编译
 #### mkdir catkin_ws_robot_sim
 #### cd catkin_ws_robot_sim
@@ -24,4 +23,4 @@
 #### source devel/setup.bash
 #### rosrun robot_sim teleop_twist_keyboard
 ### ...
-## [See record.txt]
+## 二、[See record.txt]
